@@ -1,0 +1,38 @@
+{
+    "name": "fhooe/normform-skeleton",
+    "description": "An example application or skeleton for the for getting started with NormForm.",
+    "keywords": [
+        "form processing",
+        "example",
+        "education"
+    ],
+    "type": "project",
+    "require": {
+        "php": "^7.1",
+        "fhooe/normform": "^1.0"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Wolfgang Hochleitner",
+            "email": "wolfgang.hochleitner@fh-hagenberg.at",
+            "role": "Developer"
+        },
+        {
+            "name": "Martin Harrer",
+            "email": "martin.harrer@fh-hagenberg.at",
+            "role": "Developer"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "NormFormSkeleton\\": "src/"
+        }
+    },
+    "scripts": {
+        "start": [
+            "echo 'Web server launched on http://localhost:8888'",
+            "php -S localhost:8888 -t htdocs"
+        ]
+    }
+}
