@@ -24,6 +24,7 @@
             "role": "Developer"
         }
     ],
+    "minimum-stability": "stable",
     "autoload": {
         "psr-4": {
             "NormFormSkeleton\\": "src/"
