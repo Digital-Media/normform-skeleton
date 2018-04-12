@@ -1,6 +1,3 @@
-# normform-skeleton
-
-
 # NormForm-Skeleton
 
 An example application or skeleton for the for getting started with [*NormForm*](https://github.com/Digital-Media/normform), the simple template application for PHP form processing developed for PHP classes in the program [Media Technology and Design](https://www.fh-ooe.at/en/hagenberg-campus/studiengaenge/bachelor/media-technology-and-design/) at the [University of Applied Sciences Upper Austria](https://www.fh-ooe.at/en/hagenberg-campus/). This skeleton and the library behind it are primarily designed for educational purposes (learning object oriented PHP, form processing and templating languages). Use it for "public" applications at your own risk.
