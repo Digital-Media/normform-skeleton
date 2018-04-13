@@ -14,7 +14,7 @@ Composer will create a project in the specified `path/to/install` directory.
 
 - Edit `templates/normFormDemo.html.twig` to modify the HTML (add/remove form fields, etc.).
 - Modify `src/NormFormDemo.php` to change the form validation behavior (method `isValid()`) and the business logic that is executed one the form is filled out correctly (method `business()`)). Create constants with the names of your form fields here for easier referencing.
-- Adapt `htdocs/index.php` whenever if you have edited your form. Supply `PostParameter` istances to the `View` object so that the form data can be processed and displayed accordingly.
+- Adapt `htdocs/index.php` whenever if you have edited your form. Supply `PostParameter` instances to the `View` object so that the form data can be processed and displayed accordingly.
 
 If you prefer your form without all the ([SUIT CSS](https://suitcss.github.io/) inspired) CSS, start working with `htdocs/index_simple.php` and `templates/normFormDemoSimple.html.twig` instead.
 
