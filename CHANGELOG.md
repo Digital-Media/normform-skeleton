@@ -5,8 +5,13 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+### Changed
+- PSR-4 autoloader structure in composer.json generalized for more flexibility
+- Update normalize.css from 4.0.0 to 8.0.0
+
 ### Fixed
 - Typo in README.md: [1: Update README.md](https://github.com/Digital-Media/normform-skeleton/pull/1).
+- Updated .gitignore to include directory css/vendor (for normalize.css)
 
 ## [1.0.0] - 2018-04-12
 ### Added
