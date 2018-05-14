@@ -5,6 +5,7 @@ namespace NormFormSkeleton;
 use Fhooe\NormForm\Core\AbstractNormForm;
 use Fhooe\NormForm\Parameter\GenericParameter;
 use Fhooe\NormForm\Parameter\PostParameter;
+use Fhooe\NormForm\View\View;
 
 class NormFormDemo extends AbstractNormForm
 {
@@ -24,6 +25,16 @@ class NormFormDemo extends AbstractNormForm
      * @var array
      */
     private $result;
+
+    /**
+     * Constructor for creating a new object. Use this to perform initializations of properties you need throughout your
+     * application, otherwise leave it as is. Do not remove the call to the parent constructor.
+     * @param View $defaultView Holds the initial @View object used for displaying the form.
+     */
+    public function __construct(View $defaultView)
+    {
+        parent::__construct($defaultView);
+    }
 
     /**
      * Validates the form submission. The criteria for this example are non-empty fields for first and last name.
