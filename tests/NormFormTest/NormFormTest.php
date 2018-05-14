@@ -1,5 +1,7 @@
 <?php
+
 namespace NormFormTest;
+
 /**
  * Class for testing NormFormDemo with PHPUnit
  * If this class is called in a commandline with phpunit, all methods starting with test* are called in the given order
@@ -12,7 +14,18 @@ use Fhooe\NormForm\View\View;
 
 class NormFormTest extends \PHPUnit\Framework\TestCase
 {
-    private $normform;
+    /**
+     * The NormForm object.
+     *
+     * @var NormFormDemo
+     */
+    private $normForm;
+
+    /**
+     * The view object for displaying output.
+     *
+     * @var View
+     */
     private $view;
 
     /**
@@ -30,7 +43,7 @@ class NormFormTest extends \PHPUnit\Framework\TestCase
                 new PostParameter(NormFormDemo::MESSAGE),
             ]
         );
-        $this->normform = new NormFormDemo($this->view);
+        $this->normForm = new NormFormDemo($this->view);
     }
 
     /**
@@ -38,7 +51,7 @@ class NormFormTest extends \PHPUnit\Framework\TestCase
      */
     public function tearDown()
     {
-        unset($this->normform);
+        unset($this->normForm);
     }
 
     /**
@@ -48,7 +61,7 @@ class NormFormTest extends \PHPUnit\Framework\TestCase
     public function testGetPage()
     {
         $_SERVER["REQUEST_METHOD"] = "GET";
-        $page=$this->runNormForm();
+        $page = $this->runNormForm();
         self::AssertNotEmpty($page);
         self::AssertRegexp("/form/", $page);
         self::AssertRegexp("/firstname/", $page);
@@ -62,7 +75,7 @@ class NormFormTest extends \PHPUnit\Framework\TestCase
     public function testAllFieldsAreEmpty()
     {
         $_SERVER["REQUEST_METHOD"] = "POST";
-        $_POST=[NormFormDemo::FIRST_NAME => "", NormFormDemo::LAST_NAME => "", NormFormDemo::MESSAGE => ""];
+        $_POST = [NormFormDemo::FIRST_NAME => "", NormFormDemo::LAST_NAME => "", NormFormDemo::MESSAGE => ""];
         $this->runNormForm();
         $params = $this->view->getParameters();
         foreach ($params as $param) {
@@ -72,9 +85,9 @@ class NormFormTest extends \PHPUnit\Framework\TestCase
             } else {
                 if ($param->getName() === "errorMessages") {
                     // There are two required fields, that need a errorMessage associated
-                    self::assertCount(2,$param->getValue());
-                    self::assertArrayHasKey('firstname',$param->getValue());
-                    self::assertArrayHasKey('lastname',$param->getValue());
+                    self::assertCount(2, $param->getValue());
+                    self::assertArrayHasKey("firstname", $param->getValue());
+                    self::assertArrayHasKey("lastname", $param->getValue());
                 }
             }
         }
@@ -86,7 +99,11 @@ class NormFormTest extends \PHPUnit\Framework\TestCase
     public function testFirstNameIsEmpty()
     {
         $_SERVER["REQUEST_METHOD"] = "POST";
-        $_POST=[NormFormDemo::FIRST_NAME => "", NormFormDemo::LAST_NAME => "NotEmpty", NormFormDemo::MESSAGE => "NotEmpty"];
+        $_POST = [
+            NormFormDemo::FIRST_NAME => "",
+            NormFormDemo::LAST_NAME => "NotEmpty",
+            NormFormDemo::MESSAGE => "NotEmpty"
+        ];
         $this->runNormForm();
         $params = $this->view->getParameters();
         foreach ($params as $param) {
@@ -98,8 +115,8 @@ class NormFormTest extends \PHPUnit\Framework\TestCase
                 }
             } else {
                 if ($param instanceof GenericParameter) {
-                    self::assertCount(1,$param->getValue());
-                    self::assertArrayHasKey('firstname',$param->getValue());
+                    self::assertCount(1, $param->getValue());
+                    self::assertArrayHasKey("firstname", $param->getValue());
                 }
             }
         }
@@ -111,7 +128,7 @@ class NormFormTest extends \PHPUnit\Framework\TestCase
     public function testLastNameIsEmpty()
     {
         $_SERVER["REQUEST_METHOD"] = "POST";
-        $_POST=[NormFormDemo::FIRST_NAME => "NotEmpty", NormFormDemo::LAST_NAME => "", NormFormDemo::MESSAGE => ""];
+        $_POST = [NormFormDemo::FIRST_NAME => "NotEmpty", NormFormDemo::LAST_NAME => "", NormFormDemo::MESSAGE => ""];
         $this->runNormForm();
         $params = $this->view->getParameters();
         foreach ($params as $param) {
@@ -123,8 +140,8 @@ class NormFormTest extends \PHPUnit\Framework\TestCase
                 }
             } else {
                 if ($param instanceof GenericParameter) {
-                    self::assertCount(1,$param->getValue());
-                    self::assertArrayHasKey('lastname',$param->getValue());
+                    self::assertCount(1, $param->getValue());
+                    self::assertArrayHasKey("lastname", $param->getValue());
                 }
             }
         }
@@ -136,12 +153,16 @@ class NormFormTest extends \PHPUnit\Framework\TestCase
     public function testAllFieldsAreFilled()
     {
         $_SERVER["REQUEST_METHOD"] = "POST";
-        $_POST=[NormFormDemo::FIRST_NAME => "NotEmpty", NormFormDemo::LAST_NAME => "NotEmpty", NormFormDemo::MESSAGE => "NotEmpty"];
+        $_POST = [
+            NormFormDemo::FIRST_NAME => "NotEmpty",
+            NormFormDemo::LAST_NAME => "NotEmpty",
+            NormFormDemo::MESSAGE => "NotEmpty"
+        ];
         $this->runNormForm();
         $params = $this->view->getParameters();
         foreach ($params as $param) {
             if ($param instanceof PostParameter) {
-                    self::assertNotEmpty($param->getName());
+                self::assertNotEmpty($param->getName());
             } else {
                 if ($param instanceof GenericParameter) {
                     if ($param->getName() === "errorMessages") {
@@ -164,8 +185,8 @@ class NormFormTest extends \PHPUnit\Framework\TestCase
          * Capture the HTML output and do not send to terminal, but return to calling function.
          */
         ob_start();
-        $this->normform->normform();
-        $ret= ob_get_contents();
+        $this->normForm->normform();
+        $ret = ob_get_contents();
         ob_end_clean();
         return $ret;
     }
