@@ -9,10 +9,10 @@
     "type": "project",
     "require": {
         "php": "^7.1",
-        "fhooe/normform": "^1.0"
+        "fhooe/normform": "^1.2"
     },
     "require-dev": {
-        "phpunit/phpunit": "^7.0"
+        "phpunit/phpunit": "^9.0"
     },
     "license": "MIT",
     "authors": [
