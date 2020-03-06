@@ -7,9 +7,17 @@ use Fhooe\NormForm\Parameter\GenericParameter;
 use Fhooe\NormForm\Parameter\PostParameter;
 use Fhooe\NormForm\View\View;
 
+/**
+ * A demo implementation of AbstractNormForm.
+ *
+ * @package NormFormSkeleton
+ * @author Wolfgang Hochleitner <wolfgang.hochleitner@fh-hagenberg.at>
+ * @author Martin Harrer <martin.harrer@fh-hagenberg.at>
+ * @author Rimbert Rudisch-Sommer <rimbert.rudisch-sommer@fh-hagenberg.at>
+ * @version 1.1.2
+ */
 class NormFormDemo extends AbstractNormForm
 {
-
     /** Form field constant that defines how the form field for holding a first name is called (id/name). */
     public const FIRST_NAME = "firstname";
 
