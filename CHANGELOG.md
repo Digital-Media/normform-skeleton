@@ -9,8 +9,13 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [1.1.2] - 2020-03-22
 ### Changed
 - Updated dependencies to latest NormForm (with Twig 3.0 support). This is a non-breaking, backwards-compatible change.
-- Update normalize.css from 8.0.0 to 8.0.1.
+- Updated tests to work with PHPUnit 9.0.
+- Updated normalize.css from 8.0.0 to 8.0.1.
+- Updated Google Fonts import with font swap
 - Updated template version numbers.
+
+### Fixed
+- Small CSS formatting fixes.
 
 ## [1.1.1] - 2018-10-12
 ### Fixed
