@@ -6,6 +6,16 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [1.1.2] - 2020-03-22
+### Changed
+- Updated dependencies to latest NormForm (with Twig 3.0 support). This is a non-breaking, backwards-compatible change.
+- Update normalize.css from 8.0.0 to 8.0.1.
+- Updated template version numbers.
+
+## [1.1.1] - 2018-10-12
+### Fixed
+- Forced LF line breaks on checkout to avoid unpredictable behavior.
+
 ## [1.1.0] - 2018-05-14
 ### Added
 - Unit tests for NormFormDemo in folder ``/tests``.
@@ -29,3 +39,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Directory structure (src, docs) ready for [Composer](https://getcomposer.org/).
 - API Documentation generated using [Sami](https://github.com/FriendsOfPHP/Sami). 
 - Changelog (yes, this one) based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/).
+
+[Unreleased]: https://github.com/Digital-Media/normform/compare/v1.1.2...HEAD
+[1.1.2]: https://github.com/Digital-Media/normform-skeleton/compare/v1.1.1...v1.1.2
+[1.1.1]: https://github.com/Digital-Media/normform-skeleton/compare/v1.1.0...v1.1.1
+[1.1.0]: https://github.com/Digital-Media/normform-skeleton/compare/v1.0.0...v1.1.0
+[1.0.0]: https://github.com/Digital-Media/normform-skeleton/releases/tag/v1.0.0
