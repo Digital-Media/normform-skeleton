@@ -39,19 +39,19 @@
             <form action="{{ _server.SCRIPT_NAME }}" method="post">
                 <div class="Grid Grid--gutters">
                     <div class="InputCombo Grid-full">
-                        <label for="{{ firstname.getName() }}" class="InputCombo-label">First Name*:</label>
-                        <input type="text" id="{{ firstname.getName() }}" name="{{ firstname.getName() }}"
-                               value="{{ firstname.getValue() }}" class="InputCombo-field">
+                        <label for="firstname" class="InputCombo-label">First Name*:</label>
+                        <input type="text" id="firstname" name="firstname"
+                               value="{{ firstname }}" class="InputCombo-field">
                     </div>
                     <div class="InputCombo Grid-full">
-                        <label for="{{ lastname.getName() }}" class="InputCombo-label">Last Name*:</label>
-                        <input type="text" id="{{ lastname.getName() }}" name="{{ lastname.getName() }}"
-                               value="{{ lastname.getValue() }}" class="InputCombo-field">
+                        <label for="lastname" class="InputCombo-label">Last Name*:</label>
+                        <input type="text" id="lastname" name="lastname"
+                               value="{{ lastname }}" class="InputCombo-field">
                     </div>
                     <div class="InputCombo Grid-full">
-                        <label for="{{ message.getName() }}" class="InputCombo-label">Message:</label>
-                        <textarea name="{{ message.getName() }}" id="{{ message.getName() }}"
-                                  class="InputCombo-field">{{ message.getValue() }}</textarea>
+                        <label for="message" class="InputCombo-label">Message:</label>
+                        <textarea name="message" id="message"
+                                  class="InputCombo-field">{{ message }}</textarea>
                     </div>
                     <div class="Grid-full">
                         <button type="submit" class="Button">Send</button>
