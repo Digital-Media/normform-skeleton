@@ -22,6 +22,7 @@ if (DEBUG) {
 }
 
 $view = new View(
+    # "normFormDemoSimple.html.twig",
     "normFormDemo.html.twig",
     "../templates",
     "../templates_c"
