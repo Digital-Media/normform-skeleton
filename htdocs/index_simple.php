@@ -24,12 +24,7 @@ if (DEBUG) {
 $view = new View(
     "normFormDemoSimple.html.twig",
     "../templates",
-    "../templates_c",
-    [
-        new PostParameter(NormFormDemo::FIRST_NAME),
-        new PostParameter(NormFormDemo::LAST_NAME),
-        new PostParameter(NormFormDemo::MESSAGE),
-    ]
+    "../templates_c"
 );
 
 $form = new NormFormDemo($view);
