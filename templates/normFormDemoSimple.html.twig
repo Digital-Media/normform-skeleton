@@ -24,18 +24,15 @@
         <form action="{{ _server.SCRIPT_NAME }}" method="post">
             <div>
                 <label for="firstname">First Name*:</label>
-                <input type="text" id="firstname" name="firstname"
-                       value="{{ firstname }}">
+                <input type="text" id="firstname" name="firstname" value="{{ firstname }}">
             </div>
             <div>
                 <label for="lastname">Last Name*:</label>
-                <input type="text" id="lastname" name="lastname"
-                       value="{{ lastname }}">
+                <input type="text" id="lastname" name="lastname" value="{{ lastname }}">
             </div>
             <div>
                 <label for="message">Message:</label>
-                <textarea name="message"
-                          id="message">{{ message }}</textarea>
+                <textarea name="message" id="message">{{ message }}</textarea>
             </div>
             <div>
                 <button type="submit">Send</button>
