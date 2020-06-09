@@ -3,8 +3,6 @@
 namespace NormFormSkeleton;
 
 use Fhooe\NormForm\Core\AbstractNormForm;
-use Fhooe\NormForm\Parameter\GenericParameter;
-use Fhooe\NormForm\Parameter\PostParameter;
 use Fhooe\NormForm\View\View;
 
 /**
@@ -47,12 +45,15 @@ class NormFormDemo extends AbstractNormForm
      */
     protected function isValid(): bool
     {
+        $params = $this->currentView->getBodyParams();
         if ($this->isEmptyPostField('firstname')) {
             $this->errorMessages['firstname'] = "First name is required.";
         }
         if ($this->isEmptyPostField('lastname')) {
             $this->errorMessages['lastname'] = "Last name is required.";
         }
+        $this->templateParameters['firstname'] = $params['firstname'];
+        $this->templateParameters['lastname'] = $params['lastname'];
         $this->templateParameters['errorMessages'] = $this->errorMessages;
 
         return (count($this->errorMessages) === 0);
@@ -65,15 +66,9 @@ class NormFormDemo extends AbstractNormForm
      */
     protected function business(): void
     {
-        $this->result = $_POST;
-        #$this->currentView->setParameter(new GenericParameter("result", $this->result));
-
-        $this->statusMessage = "Processing successful!";
-        #$this->currentView->setParameter(new GenericParameter("statusMessage", $this->statusMessage));
-
-        // Update the three form parameters with empty content so that the form fields are empty upon result display.
-        #$this->currentView->setParameter(new PostParameter(self::FIRST_NAME, true));
-        #$this->currentView->setParameter(new PostParameter(self::LAST_NAME, true));
-        #$this->currentView->setParameter(new PostParameter(self::MESSAGE, true));
+        $this->templateParameters['firstname'] = "";
+        $this->templateParameters['lastname'] = "";
+        $this->templateParameters['result'] = $_POST;
+        $this->templateParameters['statusMessage'] = "Processing successful!";
     }
 }
