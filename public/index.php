@@ -3,7 +3,6 @@
 require "../vendor/autoload.php";
 
 use NormFormSkeleton\NormFormDemo;
-use Fhooe\NormForm\Parameter\PostParameter;
 use Fhooe\NormForm\View\View;
 
 /*
