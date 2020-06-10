@@ -6,14 +6,9 @@ use NormFormSkeleton\NormFormDemo;
 use Fhooe\NormForm\View\View;
 
 /*
- * Toggles debugging mode on or off
- */
-define("DEBUG", true);
-
-/*
  * Activate debugging to display HTML errors in browser
  */
-if (DEBUG) {
+if (true) {
     error_reporting(E_ALL);
     ini_set("html_errors", "1");
     ini_set("display_errors", "1");
