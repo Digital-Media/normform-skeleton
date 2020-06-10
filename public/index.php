@@ -31,31 +31,39 @@ if (DEBUG) {
  */
 $route = AbstractNormForm::getRoute();
 
+/**
+ * Set template name depending on routing
+ */
+switch ($route['route']) {
+    case "normform";
+        $template = "normFormDemo.html.twig";
+        break;
+    default;
+        $template = "normFormDemo.html.twig";
+        break;
+}
+/**
+ * Initialize View and NormFormDemo.
+ */
+$view = new View($template);
+$form = new NormFormDemo($view);
+
+/**
+ * Call normForm() in case of POST.
+ * Call show() in case of GET or unsupported HTTP-method.
+ */
 switch ($route['method']) {
     case "POST";
-    switch ($route['route']) {
-        case "normform";
-            $view = new View("normFormDemo.html.twig");
-            $form = new NormFormDemo($view);
-            $form->normForm();
-            break;
-    }
-    break;
+        $form->normForm();
+        break;
     case "GET";
-    switch ($route['route']) {
-        default;
-        $view = new View("normFormDemo.html.twig");
-        $form = new NormFormDemo($view);
         $form->show();
         break;
-    }
-    break;
     default;
-        $view = new View("normFormDemo.html.twig");
-        $form = new NormFormDemo($view);
         $form->show();
         break;
 }
+
 
 /**
  * We implented no middleware in normform. Validation is done via isValid().
