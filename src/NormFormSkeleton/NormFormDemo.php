@@ -45,7 +45,7 @@ class NormFormDemo extends AbstractNormForm
      */
     protected function isValid(): bool
     {
-        $params = $this->currentView->getBodyParams();
+        $params = $this->getBodyParams();
         if ($this->isEmptyPostField('firstname')) {
             $this->errorMessages['firstname'] = "First name is required.";
         }
