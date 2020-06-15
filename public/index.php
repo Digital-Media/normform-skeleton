@@ -32,35 +32,20 @@ if (DEBUG) {
 $route = AbstractNormForm::getRoute();
 
 /**
- * Set template name depending on routing
+ * Set template name and given route
  */
-switch ($route['route']) {
-    case "normform";
-        $form = new NormFormDemo("normFormDemo.html.twig");
-        break;
-    default;
-        $form = new NormFormDemo("normFormDemo.html.twig");
-        break;
+if ($route['method'] = "POST" and $route['route'] = "normform") {
+    $form = new NormFormDemo("normFormDemo.html.twig");
+    $form->normForm();
+} elseif ($route['method'] = "GET" and $route['route'] = "normform") {
+    $form = new NormFormDemo("normFormDemo.html.twig");
+    $form->show();
+} else {
+    $form = new NormFormDemo("normFormDemo.html.twig");
+    $form->show();
 }
 
 /**
- * Call normForm() in case of POST.
- * Call show() in case of GET or unsupported HTTP-method.
- */
-switch ($route['method']) {
-    case "POST";
-        $form->normForm();
-        break;
-    case "GET";
-        $form->show();
-        break;
-    default;
-        $form->show();
-        break;
-}
-
-
-/**
- * We implented no middleware in normform. Validation is done via isValid().
- * We implented no dependencies in normform. We use use statements and autoloader directly.
+ * We implemented no middleware in normform. Validation is done via isValid().
+ * We implemented no dependencies in normform. We use use statements and autoloader directly.
  */
