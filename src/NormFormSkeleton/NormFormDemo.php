@@ -26,12 +26,12 @@ class NormFormDemo extends AbstractNormForm
     /**
      * Constructor for creating a new object. Use this to perform initializations of properties you need throughout your
      * application, otherwise leave it as is. Do not remove the call to the parent constructor.
-     * @param View $defaultView Holds the initial @View object used for displaying the form.
+     * @param $template Holds the initial template name used for displaying the form.
      */
 
-    public function __construct(View $defaultView)
+    public function __construct($template)
     {
-        parent::__construct($defaultView);
+        parent::__construct($template);
     }
 
     /**

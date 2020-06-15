@@ -36,17 +36,12 @@ $route = AbstractNormForm::getRoute();
  */
 switch ($route['route']) {
     case "normform";
-        $template = "normFormDemo.html.twig";
+        $form = new NormFormDemo("normFormDemo.html.twig");
         break;
     default;
-        $template = "normFormDemo.html.twig";
+        $form = new NormFormDemo("normFormDemo.html.twig");
         break;
 }
-/**
- * Initialize View and NormFormDemo.
- */
-$view = new View($template);
-$form = new NormFormDemo($view);
 
 /**
  * Call normForm() in case of POST.
