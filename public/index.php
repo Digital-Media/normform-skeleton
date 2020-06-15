@@ -27,7 +27,7 @@ if (DEBUG) {
 
 /**
  * This part will be found in routing.php in Slim
- * Routing will be done with an automatic redirect with a regex on path
+ * In Slim routing will be done with an automatic redirect according to a path regex
  */
 $route = AbstractNormForm::getRoute();
 
