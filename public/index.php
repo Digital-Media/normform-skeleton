@@ -34,10 +34,10 @@ $route = AbstractNormForm::getRoute();
 /**
  * Set template name and given route
  */
-if ($route['method'] = "POST" and $route['route'] = "normform") {
+if ($route['method'] === "POST" && $route['route'] === "normform") {
     $form = new NormFormDemo("normFormDemo.html.twig");
     $form->normForm();
-} elseif ($route['method'] = "GET" and $route['route'] = "normform") {
+} elseif ($route['method'] === "GET" && $route['route'] === "normform") {
     $form = new NormFormDemo("normFormDemo.html.twig");
     $form->show();
 } else {
