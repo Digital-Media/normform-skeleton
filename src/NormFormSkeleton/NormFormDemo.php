@@ -3,7 +3,6 @@
 namespace NormFormSkeleton;
 
 use Fhooe\NormForm\Core\AbstractNormForm;
-use Fhooe\NormForm\View\View;
 
 /**
  * A demo implementation of AbstractNormForm.
