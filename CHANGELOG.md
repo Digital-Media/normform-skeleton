@@ -6,6 +6,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [1.1.3] - 2021-02-08
+### Fixed
+
+- Changed PHP version constraint to >=7.1 to support PHP 8.0.
+
 ## [1.1.2] - 2020-03-22
 ### Changed
 - Updated dependencies to latest NormForm (with Twig 3.0 support). This is a non-breaking, backwards-compatible change.
@@ -45,7 +50,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - API Documentation generated using [Sami](https://github.com/FriendsOfPHP/Sami). 
 - Changelog (yes, this one) based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/).
 
-[Unreleased]: https://github.com/Digital-Media/normform/compare/v1.1.2...HEAD
+[Unreleased]: https://github.com/Digital-Media/normform/compare/v1.1.3...HEAD
+[1.1.3]: https://github.com/Digital-Media/normform-skeleton/compare/v1.1.2...v1.1.3
 [1.1.2]: https://github.com/Digital-Media/normform-skeleton/compare/v1.1.1...v1.1.2
 [1.1.1]: https://github.com/Digital-Media/normform-skeleton/compare/v1.1.0...v1.1.1
 [1.1.0]: https://github.com/Digital-Media/normform-skeleton/compare/v1.0.0...v1.1.0
